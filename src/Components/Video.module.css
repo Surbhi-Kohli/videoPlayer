@@ -1,0 +1,110 @@
+.player__controls{
+    display: flex;
+    /* justify-content:center; */
+    position: absolute;
+    width: 100%;
+    bottom:0;
+    height:60px;
+    /* transform: translateY(100%) translateY(-5px); */
+    transition: all .3s;
+    flex-wrap: wrap;
+    background: rgba(0,0,0,0.1);
+}
+.player__video{
+  width:100%;
+}
+.player {
+  max-width: 750px;
+  border: 5px solid rgba(0,0,0,0.2);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  position: relative;
+  /* font-size: 0; */
+  overflow: auto;
+  min-height:540px;
+  background-color: rgba(0,0,0,0.1);
+}
+.mph
+{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+}
+.progress {
+    flex: 10;
+     position:relative; 
+    display: flex;
+    flex-basis: 100%;
+    height: 8px;
+    transition: height 0.3s;
+    background: rgba(0,0,0,0.5);
+    cursor: ew-resize;
+    border-radius:5px;
+  }
+  .progress__filled {
+    /* width: 50%; */
+    background: #0f3057;
+    flex: 0;
+    /* flex-basis: 50%; */
+  }
+  
+.player__button {
+  background: black;
+  width:50px;
+  box-shadow: 0 0 8px 0 rgba(0,0,0,0.25);
+  border: 1px solid #888;
+  border-radius: 5px;
+  line-height: 1;
+  color: white;
+  text-align: center;
+  outline: 0;
+  padding: 0;
+  cursor: pointer;
+  max-width: 50px;
+}
+.icon{
+  background: none;
+  border: 0;
+  line-height: 1;
+  color:black;
+  text-align: center;
+  outline: 0; 
+  padding:0 2px;
+  cursor: pointer;
+  max-width: 50px;
+  border-radius: 5px
+}
+.controlCapsule
+{
+  display: flex;
+  border: 1px solid #707070;
+  border-radius: 5px;
+  padding: 4px;
+  width: 144px;
+  box-sizing: border-box;
+  margin: 0 4px;
+  justify-content: space-around
+}
+.controlButtons
+{
+  background-color: black;
+  display:flex;
+  width:100%;
+  justify-content: space-between;
+  align-items:center;
+}
+.dynamicControls{
+  display:flex;
+  justify-content: space-evenly;
+  background-color: #cfdac8;
+  padding: 5px;
+  height:100px;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+.player:hover .player__controls {
+  /* transform: translateY(0); */
+}
+
+.player:hover .progress {
+  /* height: 15px; */
+}
