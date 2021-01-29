@@ -2,12 +2,15 @@
   "name": "ttd-demo",
   "version": "0.1.0",
   "private": true,
-   "homepage":"http://surbhi-kohli.github.io/videoPlayer",
+  "homepage": "http://surbhi-kohli.github.io/videoPlayer",
   "dependencies": {
+    "@apollo/client": "^3.3.7",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",
+    "apollo-client": "^2.6.10",
     "firebase": "^8.2.4",
+    "graphql": "^15.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
@@ -21,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build" 
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -42,6 +45,9 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "gh-pages": "^3.1.0",
+    "jest-enzyme": "^7.1.2"
   }
 }

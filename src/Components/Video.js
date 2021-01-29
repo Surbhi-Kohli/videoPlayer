@@ -2,11 +2,16 @@ import React ,{useState,useEffect,useRef} from "react";
 import firebase from "../firestore";
 import classes from "./Video.module.css";
 import images from "../assets/dashboard2.png";
-import forwardBtn from  "../assets/forward-button2.png";
-import rewindButton from "../assets/rewind-button.png";
+import forwardBtn from  "../assets/forward.png";
+import rewindButton from "../assets/back.png";
+import rpmIcon from "../assets/rpmIcon.png";
 import {useSelector,useDispatch} from 'react-redux';
+import audio from "../assets/audio.png";
+
 
  const Video=(props)=>{
+    
+
      const videoRef = useRef();
      const progressRef=useRef();
      const  [icon,setIcon]=useState('►');
@@ -26,16 +31,29 @@ import {useSelector,useDispatch} from 'react-redux';
  
      useEffect(()=>{
       const db = firebase.firestore();
-      db.collection(`bunnyVideo`).doc("UBgphJ8hmICKHb3gtl3Y")
-      .get()
-      .then(doc=>{
-        dispatch({type:'add',val:doc.data().FirstSlot})
-         
-    });
+     fetch('https://videoanalytics-server.herokuapp.com/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: `
+       query {
+         data {
+           rpm
+           mph
+           timeLowerLimit
+           timeUpperLimit    
+          }
+      }` 
+  }),
+})
+ .then(res => res.json())
+.then(res => {console.log(res.data.data);
+
+ dispatch({type:'add',val:res.data.data})
+});
      },[]);
 
      const handleChange=()=>{
-    
+        
        let width=(videoRef.current.currentTime/videoRef.current.duration)*100;
        setProgressWidth(width);
        let time=videoRef.current.currentTime/60;
@@ -90,6 +108,7 @@ import {useSelector,useDispatch} from 'react-redux';
      return (
        <div className={classes.player}>
          <video
+          data-test="tag-video"
            className={classes.player__video}
            ref={videoRef}
            onClick={toggle}
@@ -103,17 +122,19 @@ import {useSelector,useDispatch} from 'react-redux';
           <span>{mph}</span>
            </div>
            <div className={classes.mph}>
-           <img src={images} style={{width:'65px',height:'65px'}}/>
-            <span>{rpm}</span>
+           <img src={rpmIcon} style={{width:'65px',height:'65px'}}/>
+            <span data-test="rpm">{rpm}</span>
            </div>
          </div>
          <div className={classes.player__controls}>
            <div
+             data-test="progress"
              className={classes.progress}
              ref={progressRef}
              onClick={progressChange}
            >
              <div
+             data-test="progressFilled"
                className={classes.progress__filled}
                style={{ flexBasis: `${progressWidth}%` }}
              ></div>
@@ -125,7 +146,7 @@ import {useSelector,useDispatch} from 'react-redux';
                className={classes.icon}
                onClick={skipVideo}
              >
-               <img src={rewindButton} style={{width:'29px',height:'29px',backgroundColor:'lightgray',borderRadius:'5px'}}/>
+               <img src={rewindButton} style={{width:'29px',height:'32px',backgroundColor:'lightgray',borderRadius:'5px'}}/>
              </button>
              <button
                className={classes.player__button}
@@ -139,11 +160,11 @@ import {useSelector,useDispatch} from 'react-redux';
                className={classes.icon}
                onClick={skipVideo}
              >
-               <img src={forwardBtn} style={{width:'29px',height:'29px',backgroundColor:'lightgray',borderRadius:'5px'}}/>
+               <img src={forwardBtn} style={{width:'29px',height:'32px',backgroundColor:'lightgray',borderRadius:'5px'}}/>
              </button>
              </div>
-             <div>
-             <input
+             <div style={{display:'flex',alignItems:'center'}}>
+             {/* <input
                type="range"
                name="playbackRate"
                className="player__slider"
@@ -151,8 +172,8 @@ import {useSelector,useDispatch} from 'react-redux';
                max="2"
                step="0.1"
                onChange={sliderHandler}
-             />
-            
+             /> */}
+             <img src={audio} style={{width:'25px',height:'25px'}}/>
              <input
                type="range"
                name="volume"
@@ -162,7 +183,7 @@ import {useSelector,useDispatch} from 'react-redux';
                step="0.05"
                onChange={sliderHandler}
              />
-             
+              
              </div>
            </div>
          </div>

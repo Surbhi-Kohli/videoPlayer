@@ -1,7 +1,7 @@
 const initialState={
     data:[],
-    mph:"",
-    rpm:""
+    mph:"0",
+    rpm:"0"
 }
 function rootReducer(state=initialState,action)
 {
