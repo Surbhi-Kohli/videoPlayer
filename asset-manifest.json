@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/videoPlayer/static/css/main.b87d80e3.chunk.css",
-    "main.js": "/videoPlayer/static/js/main.61b93596.chunk.js",
-    "main.js.map": "/videoPlayer/static/js/main.61b93596.chunk.js.map",
-    "runtime-main.js": "/videoPlayer/static/js/runtime-main.24e24370.js",
-    "runtime-main.js.map": "/videoPlayer/static/js/runtime-main.24e24370.js.map",
-    "static/js/2.0f0b7e9b.chunk.js": "/videoPlayer/static/js/2.0f0b7e9b.chunk.js",
-    "static/js/2.0f0b7e9b.chunk.js.map": "/videoPlayer/static/js/2.0f0b7e9b.chunk.js.map",
-    "static/js/3.06dee6a6.chunk.js": "/videoPlayer/static/js/3.06dee6a6.chunk.js",
-    "static/js/3.06dee6a6.chunk.js.map": "/videoPlayer/static/js/3.06dee6a6.chunk.js.map",
+    "main.css": "/videoPlayer/static/css/main.ebc4a5e4.chunk.css",
+    "main.js": "/videoPlayer/static/js/main.7f5ec16b.chunk.js",
+    "main.js.map": "/videoPlayer/static/js/main.7f5ec16b.chunk.js.map",
+    "runtime-main.js": "/videoPlayer/static/js/runtime-main.6a00ddc6.js",
+    "runtime-main.js.map": "/videoPlayer/static/js/runtime-main.6a00ddc6.js.map",
+    "static/js/2.9c11b5ac.chunk.js": "/videoPlayer/static/js/2.9c11b5ac.chunk.js",
+    "static/js/2.9c11b5ac.chunk.js.map": "/videoPlayer/static/js/2.9c11b5ac.chunk.js.map",
+    "static/js/3.e60ae156.chunk.js": "/videoPlayer/static/js/3.e60ae156.chunk.js",
+    "static/js/3.e60ae156.chunk.js.map": "/videoPlayer/static/js/3.e60ae156.chunk.js.map",
     "index.html": "/videoPlayer/index.html",
-    "static/css/main.b87d80e3.chunk.css.map": "/videoPlayer/static/css/main.b87d80e3.chunk.css.map",
-    "static/js/2.0f0b7e9b.chunk.js.LICENSE.txt": "/videoPlayer/static/js/2.0f0b7e9b.chunk.js.LICENSE.txt",
+    "static/css/main.ebc4a5e4.chunk.css.map": "/videoPlayer/static/css/main.ebc4a5e4.chunk.css.map",
+    "static/js/2.9c11b5ac.chunk.js.LICENSE.txt": "/videoPlayer/static/js/2.9c11b5ac.chunk.js.LICENSE.txt",
     "static/media/bunnyStory.589e728e.mp4": "/videoPlayer/static/media/bunnyStory.589e728e.mp4",
     "static/media/dashboard2.4ac8149a.png": "/videoPlayer/static/media/dashboard2.4ac8149a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.24e24370.js",
-    "static/js/2.0f0b7e9b.chunk.js",
-    "static/css/main.b87d80e3.chunk.css",
-    "static/js/main.61b93596.chunk.js"
+    "static/js/runtime-main.6a00ddc6.js",
+    "static/js/2.9c11b5ac.chunk.js",
+    "static/css/main.ebc4a5e4.chunk.css",
+    "static/js/main.7f5ec16b.chunk.js"
   ]
 }
