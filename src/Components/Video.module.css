@@ -1,10 +1,9 @@
 .player__controls{
     display: flex;
     /* justify-content:center; */
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
-    bottom:0;
-    height:60px;
+    height:8%;
     /* transform: translateY(100%) translateY(-5px); */
     transition: all .3s;
     flex-wrap: wrap;
@@ -13,14 +12,18 @@
 .player__video{
   width:100%;
 }
+.chart{
+  background-color: black;
+  border: 1px solid gray;
+}
 .player {
  width:650px;
+ height: 88vh;
   border: 5px solid rgba(0,0,0,0.2);
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
   position: relative;
   /* font-size: 0; */
   overflow: auto;
-  min-height:540px;
   background-color: rgba(0,0,0,0.1);
 }
 .mph
@@ -32,15 +35,20 @@
 }
 .progress {
     flex: 10;
+    /* width:502px; */
+    margin-left:66px;
+     margin-right: 77px;
      position:relative; 
     display: flex;
-    flex-basis: 100%;
+     flex-basis: 80%; 
     height: 8px;
     transition: height 0.3s;
-    background: rgba(0,0,0,0.5);
+    background: lightgray;
     cursor: ew-resize;
     border-radius:5px;
   }
+
+  
   .progress__filled {
     /* width: 50%; */
     background: #0f3057;
@@ -98,8 +106,13 @@
   justify-content: space-evenly;
   background-color: #cfdac8;
   padding: 5px;
-  height:100px;
+  height:8%;
   box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+video{
+  display:flex;
+  height:48%;
+
 }
 .player:hover .player__controls {
   /* transform: translateY(0); */

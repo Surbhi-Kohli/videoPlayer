@@ -6,12 +6,11 @@ import forwardBtn from  "../assets/forward.png";
 import rewindButton from "../assets/back.png";
 import rpmIcon from "../assets/rpmIcon.png";
 import {useSelector,useDispatch} from 'react-redux';
+import Chart from "./Chart";
 import audio from "../assets/audio.png";
 
 
  const Video=(props)=>{
-    
-
      const videoRef = useRef();
      const progressRef=useRef();
      const  [icon,setIcon]=useState('►');
@@ -94,6 +93,7 @@ import audio from "../assets/audio.png";
      }
      const progressChange=(e)=>{
         const scrubTime=(e.nativeEvent.offsetX/progressRef.current.offsetWidth)*videoRef.current.duration;
+      //  console.log("scrubTime is "+scrubTime);
         videoRef.current.currentTime=scrubTime;                                                                       
      }
      const sliderHandler=(event)=>{
@@ -118,16 +118,16 @@ import audio from "../assets/audio.png";
       
          <div className={classes.dynamicControls}>
            <div className={classes.mph}>
-          <img src={images} style={{width:'65px',height:'65px'}}/>
+          <img src={images} style={{width:'40px',height:'40px'}}/>
           <span>{mph}</span>
            </div>
            <div className={classes.mph}>
-           <img src={rpmIcon} style={{width:'65px',height:'65px'}}/>
+           <img src={rpmIcon} style={{width:'40px',height:'40px'}}/>
             <span data-test="rpm">{rpm}</span>
            </div>
          </div>
          <div className={classes.player__controls}>
-           <div
+           {/* <div
              data-test="progress"
              className={classes.progress}
              ref={progressRef}
@@ -138,7 +138,7 @@ import audio from "../assets/audio.png";
                className={classes.progress__filled}
                style={{ flexBasis: `${progressWidth}%` }}
              ></div>
-           </div>
+           </div> */}
            <div className={classes.controlButtons} >
             <div className={classes.controlCapsule}>
              <button
@@ -186,7 +186,23 @@ import audio from "../assets/audio.png";
               
              </div>
            </div>
+           
          </div>
+         <div className={classes.chart}>
+         <div
+             data-test="progress"
+             className={classes.progress}
+             ref={progressRef}
+             onClick={progressChange}
+           >
+             <div
+             data-test="progressFilled"
+               className={classes.progress__filled}
+               style={{ flexBasis:`${progressWidth}%` }}
+             ></div>
+           </div>
+          <Chart time={videoRef.current?Math.ceil(videoRef.current.currentTime/60):0}/>
+       </div>
        </div>
      );
  }
